@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(SphereCollider))]
 internal class StateController : MonoBehaviour
 {
     [SerializeField] internal Hunter hunter;
     [SerializeField] internal Decision[] decisions;
-
+    [Space(20)] [SerializeField] private State defaultState;
     private State _activeState;
 
     private void Update()
