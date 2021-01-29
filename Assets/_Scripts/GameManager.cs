@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-
-    internal void SetScore(int amount) { _score += amount; }
+    
     internal void RemovePrey(Prey preyToRemove) { _prey.Remove(preyToRemove); }
     
     [SerializeField] private float roundDuration;
+    [SerializeField] private TMP_Text timer;
+    [SerializeField] private TMP_Text score;
     
     private List<Prey> _prey;
     private List<Hunter> _hunters;
@@ -36,9 +37,17 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         roundDuration -= Time.deltaTime;
+
+        timer.text = Convert.ToInt32(roundDuration).ToString("00");
         
         if(Convert.ToInt32(roundDuration) == 0)
             EndRound();
+    }
+
+    internal void SetScore(int amount)
+    {
+        _score += amount;
+        score.text = _score.ToString("000");
     }
     
     private void EndRound()
