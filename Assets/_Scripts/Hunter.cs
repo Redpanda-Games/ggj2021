@@ -54,6 +54,8 @@ public class Hunter : MonoBehaviour
 
     internal void InspectClue()
     {
+        if (Clues.Count <= 0) return;
+        
         _agent.SetDestination(Clues[0]);
         Clues.RemoveAt(0);
     }
