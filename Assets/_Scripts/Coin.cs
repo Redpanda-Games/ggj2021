@@ -3,6 +3,9 @@
 [RequireComponent(typeof(AudioSource))]
 public class Coin : MonoBehaviour
 {
+    public delegate void SingleArgumentEvent(object o);
+    public static event SingleArgumentEvent OnCoinCollected;
+    
     [SerializeField] private int value;
 
     private AudioSource _audio;
@@ -21,6 +24,7 @@ public class Coin : MonoBehaviour
         if(!_audio.isPlaying)
             _audio.Play();
         
+        OnCoinCollected?.Invoke(transform);
         Destroy(gameObject);
     }
 }

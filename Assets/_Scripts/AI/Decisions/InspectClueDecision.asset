@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 679d6f3b07f94686a1fdf69ed86aca5a, type: 3}
+  m_Name: InspectClueDecision
+  m_EditorClassIdentifier: 
+  TrueState: {fileID: 11400000, guid: 1159392b648852444bbde180d72a8f03, type: 2}
+  FalseState: {fileID: 11400000, guid: b68b60dd4014f254ab1b7d0b84221292, type: 2}

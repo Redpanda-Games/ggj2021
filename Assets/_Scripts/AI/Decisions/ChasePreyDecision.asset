@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e576d2d94c427d43a1d050626f0e248, type: 3}
+  m_Name: ChasePreyDecision
+  m_EditorClassIdentifier: 
+  TrueState: {fileID: 11400000, guid: 35deb7de1c478114e8250789e43e4332, type: 2}
+  FalseState: {fileID: 11400000, guid: b68b60dd4014f254ab1b7d0b84221292, type: 2}
