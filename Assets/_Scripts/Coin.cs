@@ -18,13 +18,13 @@ public class Coin : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.CompareTag("Prey")) return;
+        OnCoinCollected?.Invoke(transform.position);
         
         GameManager.Instance.SetScore(value);
         
         if(!_audio.isPlaying)
             _audio.Play();
         
-        OnCoinCollected?.Invoke(transform);
         Destroy(gameObject);
     }
 }
