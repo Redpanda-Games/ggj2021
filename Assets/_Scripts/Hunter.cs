@@ -6,7 +6,7 @@ using Random = System.Random;
 [RequireComponent(typeof(NavMeshAgent))]
 public class Hunter : MonoBehaviour
 {
-    internal List<Transform> Clues;
+    internal List<Vector3> Clues;
 
     internal bool HasPrey;
     
@@ -16,14 +16,17 @@ public class Hunter : MonoBehaviour
     
     void Start()
     {
-        Clues = new List<Transform>();
+        Clues = new List<Vector3>();
+        
+        _random = new Random();
         
         _agent = GetComponent<NavMeshAgent>();
-        _random = new Random();
+        _agent.updateRotation = false;
+        _agent.updateUpAxis = false;
 
-        Coin.OnCoinCollected += clueTransform => Clues.Add((Transform)clueTransform);
+        Coin.OnCoinCollected += cluePosition => Clues.Add((Vector3)cluePosition);
     }
-
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.CompareTag("Prey")) return;
@@ -42,18 +45,21 @@ public class Hunter : MonoBehaviour
 
     internal void WanderAround()
     {
-        Vector2 deltaPosition = new Vector2(_random.Next(5), _random.Next(5));
-        _agent.Move(deltaPosition);
+        //TODO: Create destination, set destination, wait amount of time
+        // float rnd = _random.Next(-20, 20);
+        //
+        // Vector2 deltaPosition = new Vector2(rnd, rnd);
+        // _agent.SetDestination(deltaPosition);
     }
 
     internal void InspectClue()
     {
-        _agent.Move(Clues[0].position);
-        Clues.Remove(Clues[0]);
+        _agent.SetDestination(Clues[0]);
+        Clues.RemoveAt(0);
     }
 
     internal void ChasePrey()
     {
-        _agent.Move(_activePrey.transform.position);
+        _agent.SetDestination(_activePrey.transform.position);
     }
 }
