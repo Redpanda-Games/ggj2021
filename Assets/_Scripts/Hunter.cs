@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AI;
 using Random = System.Random;
@@ -13,6 +16,7 @@ public class Hunter : MonoBehaviour
     private NavMeshAgent _agent;
     private Random _random;
     private GameObject _activePrey;
+    private float _timer;
     
     void Start()
     {
@@ -42,14 +46,15 @@ public class Hunter : MonoBehaviour
         HasPrey = false;
         _activePrey = null;
     }
-
+    
     internal void WanderAround()
     {
         //TODO: Create destination, set destination, wait amount of time
-        // float rnd = _random.Next(-20, 20);
-        //
-        // Vector2 deltaPosition = new Vector2(rnd, rnd);
-        // _agent.SetDestination(deltaPosition);
+        float rndX = _random.Next(-60, 60);
+        float rndY = _random.Next(-60, 60);
+        
+        Vector3 deltaPosition = new Vector3(rndX, rndY);
+        _agent.Move(deltaPosition);
     }
 
     internal void InspectClue()
