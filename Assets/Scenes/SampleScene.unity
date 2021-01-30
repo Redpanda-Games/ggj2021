@@ -10696,7 +10696,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 3bcdca7569c968641a3e90eaffc18e85, type: 2}
     - target: {fileID: 903820004662994384, guid: ff9d2af55e65b90449c109fe017b226d, type: 3}
       propertyPath: m_Speed
-      value: 30
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 903820004662994384, guid: ff9d2af55e65b90449c109fe017b226d, type: 3}
       propertyPath: m_Radius
@@ -10704,7 +10704,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 903820004662994384, guid: ff9d2af55e65b90449c109fe017b226d, type: 3}
       propertyPath: m_Acceleration
-      value: 15
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 3467808418565782962, guid: ff9d2af55e65b90449c109fe017b226d, type: 3}
       propertyPath: m_Radius
