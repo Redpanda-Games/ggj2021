@@ -9,7 +9,6 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D _rb;
     private MultiPlayerControls _playerControls;
     
-    // Start is called before the first frame update
     void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -24,14 +23,7 @@ public class PlayerController : MonoBehaviour
     {
         _playerControls.Disable();
     }
-
-    public void OnMove(InputValue value)
-    {
-        // Vector2 input = value.Get<Vector2>();
-        // input *= speed * Time.fixedDeltaTime;
-        // _rb.MovePosition(_rb.position + input);
-    }
-    // Update is called once per frame
+    
     void FixedUpdate()
     {
         Vector2 input = _playerControls.Player.Move.ReadValue<Vector2>();
