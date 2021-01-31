@@ -7,19 +7,16 @@ public class Prey : MonoBehaviour
 
     private void Awake()
     {
-        _audio = GetComponent<AudioSource>();
+        _audio = GameManager.Instance.GetComponent<AudioSource>();
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
         if(!other.gameObject.CompareTag("Hunter")) return;
+
+        if (!_audio.isPlaying)
+            _audio.PlayOneShot(sounds[0]);
         
         Destroy(gameObject);
-    }
-
-    private void OnDestroy()
-    {
-        if(!_audio.isPlaying)
-            _audio.PlayOneShot(sounds[0]);
     }
 }
