@@ -33,6 +33,7 @@ public class Hunter : MonoBehaviour
         _agent.updateUpAxis = false;
 
         Coin.OnCoinCollected += cluePosition => Clues.Add((Vector3)cluePosition);
+        NoisyFloor.OnMakeNoise += noisePosition => Clues.Add((Vector3)noisePosition);
     }
     
     private void OnTriggerEnter2D(Collider2D other)
