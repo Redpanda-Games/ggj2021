@@ -10937,7 +10937,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roundDuration: 1
-  scoreToWin: 120
+  scoreToWin: 100
   timer: {fileID: 701638935}
   score: {fileID: 244503179}
   result: {fileID: 215365629}
