@@ -10936,7 +10936,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2acf1765b90e9e8479846f9dfe2eccda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roundDuration: 1
+  roundDuration: 60
   scoreToWin: 100
   timer: {fileID: 701638935}
   score: {fileID: 244503179}
