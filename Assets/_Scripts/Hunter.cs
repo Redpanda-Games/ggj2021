@@ -9,10 +9,13 @@ using Random = System.Random;
 [RequireComponent(typeof(NavMeshAgent))]
 public class Hunter : MonoBehaviour
 {
+    [SerializeField] private AudioClip[] sounds;
+    
     internal List<Vector3> Clues;
 
     internal bool HasPrey;
-    
+
+    private AudioSource _audio;
     private NavMeshAgent _agent;
     private Random _random;
     private GameObject _activePrey;
@@ -23,7 +26,8 @@ public class Hunter : MonoBehaviour
         Clues = new List<Vector3>();
         
         _random = new Random();
-        
+
+        _audio = GetComponent<AudioSource>();
         _agent = GetComponent<NavMeshAgent>();
         _agent.updateRotation = false;
         _agent.updateUpAxis = false;
@@ -37,6 +41,9 @@ public class Hunter : MonoBehaviour
         
         HasPrey = true;
         _activePrey = other.gameObject;
+        
+        if(!_audio.isPlaying)
+            _audio.PlayOneShot(sounds[0]);
     }
 
     private void OnTriggerExit2D(Collider2D other)
