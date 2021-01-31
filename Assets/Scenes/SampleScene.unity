@@ -1964,7 +1964,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2acf1765b90e9e8479846f9dfe2eccda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roundDuration: 30
+  roundDuration: 6000
   scoreToWin: 120
   timer: {fileID: 108267821}
   score: {fileID: 1297778428}
