@@ -1,10 +1,13 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 internal class StateController : MonoBehaviour
 {
     [SerializeField] internal Hunter hunter;
     [SerializeField] internal Decision[] decisions;
-    [Space(20)] [SerializeField] private State defaultState;
+    [Space(20)]
+    [SerializeField] private State defaultState;
+    
     private State _activeState;
 
     private void Update()

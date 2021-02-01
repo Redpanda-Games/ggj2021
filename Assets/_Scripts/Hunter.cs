@@ -16,6 +16,7 @@ public class Hunter : MonoBehaviour
     internal bool HasPrey;
 
     private AudioSource _audio;
+    private Animator _animator;
     private NavMeshAgent _agent;
     private Random _random;
     private GameObject _activePrey;
@@ -28,6 +29,7 @@ public class Hunter : MonoBehaviour
         _random = new Random();
 
         _audio = GetComponent<AudioSource>();
+        _animator = GetComponent<Animator>();
         _agent = GetComponent<NavMeshAgent>();
         _agent.updateRotation = false;
         _agent.updateUpAxis = false;
@@ -35,7 +37,13 @@ public class Hunter : MonoBehaviour
         Coin.OnCoinCollected += cluePosition => Clues.Add((Vector3)cluePosition);
         NoisyFloor.OnMakeNoise += noisePosition => Clues.Add((Vector3)noisePosition);
     }
-    
+
+    private void FixedUpdate()
+    {
+        _animator.SetFloat("Horizontal", _agent.velocity.x);
+        _animator.SetFloat("Vertical", _agent.velocity.y);
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.CompareTag("Prey")) return;
