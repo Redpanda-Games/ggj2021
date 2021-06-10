@@ -3,7 +3,7 @@
 INSTALLATION von UNITY
 
 2020er Version installieren
-https://unity3d.com/de/get-unity/download?fbclid=IwAR08ZofDUDZ6U-NXgBl_uTGgoc9K3ZfHpKSU5OCMxI2JuPIneS1bF_EqAzs
+https://unity3d.com/de/get-unity/download
 
 Lizenz: Persönlich
 
